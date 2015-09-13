@@ -8,17 +8,12 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 //
 var clickHandler = function(info, tab) {
-  alert('ehyyydshjgackdjs');
-  alert('item ' + info.menuItemId + ' was clicked');
-  alert('info: ' + JSON.stringify(info));
-  alert('tab: ' + JSON.stringify(tab));
 
   //Add all you functional Logic here
   chrome.tabs.query({
     'active': true,
     'currentWindow': true,
   }, function(tabs) {
-    alert(tabs);
     chrome.tabs.sendMessage(tabs[0].id, {
       'functiontoInvoke': 'runShareJs',
     });
