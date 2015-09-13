@@ -7,7 +7,17 @@
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
   },
+  "permissions": [
+    "contextMenus"
+  ],
   "default_locale": "en",
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": [
+      "scripts/bcsocket.js",
+      "scripts/share.js",
+      "scripts/content.js"]
+  }],
   "background": {
     "scripts": [
       "scripts/chromereload.js",
